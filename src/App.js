@@ -13,6 +13,7 @@ function App() {
     <About/>
     <Title title={"Skills"}/>
     <Skills/>
+    <Title title={"Projects"}/>
   </>
 }
 
