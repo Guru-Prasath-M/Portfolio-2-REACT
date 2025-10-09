@@ -1,6 +1,7 @@
 import About from "./Components/About/About";
 import Home from "./Components/Navbar/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
+import Projects from "./Components/Projects/Projects";
 import Skills from "./Components/Skills/Skills";
 import Title from "./Components/Title/Title";
 
@@ -14,6 +15,9 @@ function App() {
     <Title title={"Skills"}/>
     <Skills/>
     <Title title={"Projects"}/>
+    <Projects/>
+    <Title title={"Contact"}/>
+    
   </>
 }
 
