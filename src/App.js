@@ -1,4 +1,5 @@
 import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
 import Home from "./Components/Navbar/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Projects from "./Components/Projects/Projects";
@@ -17,7 +18,7 @@ function App() {
     <Title title={"Projects"}/>
     <Projects/>
     <Title title={"Contact"}/>
-    
+    <Contact/>
   </>
 }
 
