@@ -2,10 +2,35 @@ import React from 'react'
 import './Contact.css'
 
 const Contact = () => {
+
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "481be33a-de61-4ce1-ae90-8623794649af");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return <>
     <div className="contact">
         <div className="contact-col">
-            <form>
+            <form onSubmit={onSubmit}>
                 <label>Your name</label>
                 <input type="text" name='name' placeholder='Enter your name' required />
                 <label>Phone Number</label>
@@ -14,6 +39,7 @@ const Contact = () => {
                 <textarea name="message" rows='6' placeholder='Enter your message' required></textarea>
                 <button type='sumbit' className='btn dark-btn'>Submit now</button>
             </form>
+            <span>{result}</span>
         </div>
     </div>
   </>
